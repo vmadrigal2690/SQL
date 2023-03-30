@@ -1,0 +1,33 @@
+--Create a Furniture store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, category TEXT,  price INTEGER, margin integer);
+
+INSERT INTO store VALUES (1, "Blue Sofa", "Living UPH", 599, 46);
+INSERT INTO store VALUES (2, "Grey Sofa", "Living UPH", 619, 48);
+INSERT INTO store VALUES (3, "Blue Chair", "Living UPH", 449, 44);
+INSERT INTO store VALUES (4, "Grey Chair", "Living UPH", 479, 44);
+INSERT INTO store VALUES (5, "Brown Table", "Dining", 699, 47);
+INSERT INTO store VALUES (6, "Brown SC", "Dining", 199, 46);
+INSERT INTO store VALUES (7, "Brown AC", "Dining", 209, 46);
+INSERT INTO store VALUES (8, "Black Desk", "Office", 548, 45);
+INSERT INTO store VALUES (9, "Desk chair", "Office", 205, 44);
+INSERT INTO store VALUES (10, "Beige Bed", "Bedroom", 699, 46);
+INSERT INTO store VALUES (11, "Beige NS", "Bedroom", 248, 45);
+INSERT INTO store VALUES (12, "Beige Dresser", "Bedroom", 399, 46);
+INSERT INTO store VALUES (13, "Black Cocktail", "OCC", 248, 45);
+INSERT INTO store VALUES (14, "Black End TAble", "OCC", 178, 44);
+INSERT INTO store VALUES (15, "Black Sofa Table", "OCC", 199, 43);
+
+--display the database ordered by price. 
+SELECT* FROM store
+ORDER BY price DESC;
+
+--What is the average margin?
+SELECT AVG(margin) "avg margin"
+FROM store;
+
+
+--What is the highest price item in the Living UPH category?
+SELECT MAX(price) "most expensive Living UPH"
+FROM store
+WHERE category = "Living UPH";
